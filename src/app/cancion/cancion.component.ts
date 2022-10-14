@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CancionesService, Cancion} from '../servicios/canciones.service';
 
 @Component({
   selector: 'app-cancion',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CancionComponent implements OnInit {
 
-  constructor() { }
+  canciones:Cancion[] = [];
 
-  ngOnInit(): void {
+  constructor( private _cancionesService:CancionesService ) { }
+
+  ngOnInit() {
+
+    this.canciones = this._cancionesService.getCanciones();
+
+    console.log (this.canciones);
+
+
   }
 
 }

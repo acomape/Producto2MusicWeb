@@ -6,16 +6,16 @@
     <p>Estilo: <b>Rock</b></p>
 </div> -->
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="/src/assets/logoG7.jpg" alt="Card image cap">
+<div class="card" *ngFor=" let cancion of canciones" style="width: 18rem;">
+  <img class="card-img-top" [src]="cancion.img" [alt]="cancion.titulo">
   <div class="card-body">
-    <h5 class="card-title">Titulo Canción</h5>
-    <p class="card-text">Artista</p>
+    <h5 class="card-title">{{ cancion.titulo }}</h5>
+    <p class="card-text">{{ cancion.artista }}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Estilo:...</li>
-    <li class="list-group-item">Año:</li>
-    <li class="list-group-item">Album</li>
+    <li class="list-group-item">Estilo:{{ cancion.estilo }}</li>
+    <li class="list-group-item">Año: {{ cancion.fecha }}</li>
+    <li class="list-group-item">Album: {{ cancion.album }}</li>
   </ul>
   <div class="card-body">
     <a href="#" class="card-link">Ver Detalles</a>
