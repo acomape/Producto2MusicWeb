@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#general{
+    width:90%;
+    max-width: 1200px;
+    margin:auto;
+    padding: 40px 0;
+    display:flex;
+    flex-wrap: wrap;
+    background-color:blue;
+
+}
+
+#barraNavegacion{
+    position: static;
+    width: 25%;
+    height:800px;
+    background-color:red;
+}
+
+#seccionPrincipal{
+    float: right;
+    width: 75%;
+    height: 800px;
+    background-color:grey;
+
+}
+
+#reproductor{
+    width: 1200px;
+    height: 100px;
+    margin-left: 75%;
+    position: relative;
+    background-color:yellow;
+}
+
