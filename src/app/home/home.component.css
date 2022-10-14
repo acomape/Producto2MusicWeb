@@ -1,39 +1,48 @@
-*{
-    margin: 0px;
-    padding: 0px;
+
+
+
+.container {
+
+  display: grid;
+  margin: auto;
+  max-width: 80%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.01fr 1.6fr 1.3fr 0.7fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Header Header Header Header"
+    "NavBar Body Body Body"
+    "NavBar Body Body Body"
+    "NavBar Footer Footer Footer";
 }
 
-#general{
-    width:90%;
-    max-width: 1200px;
-    margin:auto;
-    padding: 40px 0;
-    display:flex;
-    flex-wrap: wrap;
-    background-color:blue;
-
+.Header { grid-area: Header;
+  background-color: blue;
 }
 
-#barraNavegacion{
-    position: static;
-    width: 25%;
-    height:800px;
-    background-color:red;
+.NavBar { grid-area: NavBar;
+  background-color: red;
 }
 
-#seccionPrincipal{
-    float: right;
-    width: 75%;
-    height: 800px;
-    background-color:grey;
-
+.Body { grid-area: Body;
+  background-color: grey;
 }
 
-#reproductor{
-    width: 1200px;
-    height: 100px;
-    margin-left: 75%;
-    position: relative;
-    background-color:yellow;
+.Footer { grid-area: Footer;
+  background-color: yellow;
 }
 
+h1 {
+  padding: 15px;
+  margin: 15px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  margin: 5px;
+  padding: 5px;
+  background-color: red;
+}
