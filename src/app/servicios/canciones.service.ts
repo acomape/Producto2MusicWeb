@@ -12,7 +12,7 @@ export class CancionesService {
       img: "assets/instantcrush.jpg",
       estilo:"Electrónica",
       fecha: "2013",
-      album: "Random Access Memories",
+      album: "R.A.M",
     },
     {
       titulo: "Despecha",
