@@ -1,0 +1,28 @@
+<div class="container" style="margin:15px" *ngIf="cancion">
+  <h1>{{cancion.titulo}}</h1><small>{{cancion.artista}}</small>
+<hr>
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <img src={{cancion.img}} class="img-fluid" alt="">
+      <br><br>
+
+    </div>
+
+    <div class="col -md-8">
+      <h3>Album: {{cancion.album}}</h3>
+      <hr>
+      <p>Fecha:{{cancion.fecha}}</p>
+      <p>Estilo: {{cancion.estilo}}</p>
+      <button class="btn btn-sm btn-outline-danger" (click)="goHome()">Volver</button>
+
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
