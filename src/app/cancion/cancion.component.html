@@ -1,7 +1,27 @@
-<div class="song-container">
+<!-- <div class="song-container">
     <h2 class="song-title">Componente Canción</h2>
     <p>Autor: <b>Juan Pérez</b></p>
     <p>Año: <b>2022</b></p>
     <p>Disco: <b>Tercer Disco</b></p>
     <p>Estilo: <b>Rock</b></p>
+</div> -->
+
+<div class="card" *ngFor=" let cancion of canciones;" style="width: 18rem;">
+  <img class="card-img-top" [src]="cancion.img" [alt]="cancion.titulo">
+  <div class="card-body">
+    <h5 class="card-title">{{ cancion.titulo }}</h5>
+    <p class="card-text">{{ cancion.artista }}</p>
+  </div>
+  <div class="card-body">
+    <!-- <button class="btn btn-sm btn-outline" routerLink="/detalles/{{cancion.id}}">Ver Detalles</button> -->
+    <button class="btn btn-sm btn-outline" (click)="verDetalle(cancion.id)">Ver Detalles</button>
+    <button class="btn btn-sm btn-outline" routerLink="">Reproducir</button>
+  </div>
 </div>
+
+
+<!-- <ul class="list-group list-group-flush">
+  <li class="list-group-item">Estilo:{{ cancion.estilo }}</li>
+  <li class="list-group-item">Año: {{ cancion.fecha }}</li>
+  <li class="list-group-item">Album: {{ cancion.album }}</li>
+</ul> -->

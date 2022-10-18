@@ -1,0 +1,32 @@
+<!-- <div class="container" style="margin:15px" *ngIf="cancion">
+  <h1>{{cancion.titulo}}</h1><small>{{cancion.artista}}</small>
+<hr>
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <img src={{cancion.img}} class="img-fluid" alt="">
+      <br><br>
+
+    </div>
+
+    <div class="col -md-8">
+      <h3>Album: {{cancion.album}}</h3>
+      <hr>
+      <p>Fecha:{{cancion.fecha}}</p>
+      <p>Estilo: {{cancion.estilo}}</p>
+      <button class="btn btn-sm btn-outline-danger" (click)="goHome()">Volver</button>
+
+    </div>
+  </div>
+</div> -->
+
+<h2>Detalles</h2>
+<div class="container" *ngIf="cancion">
+    <img src="{{cancion?.img}}" alt="" srcset="" height="250">
+    <h1>{{cancion?.titulo}}</h1>
+    <p>{{cancion?.artista}}</p>
+    <p>{{cancion?.album}}</p>
+    <p>{{cancion?.estilo}}</p>
+    <p>{{cancion?.fecha}}</p>
+</div>
