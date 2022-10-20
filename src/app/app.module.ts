@@ -7,6 +7,10 @@ import { CancionComponent } from './cancion/cancion.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { ReproductorComponent } from './reproductor/reproductor.component';
+import { MaterialModule } from './shared/modules/material/material.module';
+
+
 
 
 
@@ -24,12 +28,16 @@ import { APP_ROUTING } from './app.routes';
     HomeComponent,
     detalleCancionComponent,
     HeaderComponent,
+    ReproductorComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     APP_ROUTING
+    
   ],
   providers: [
     CancionesService

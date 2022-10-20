@@ -1,0 +1,80 @@
+.button {
+    width: 40px;
+    margin-right: 5em;
+}
+
+.container {
+    flex-grow: 1;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100px;
+    min-width: 270px;
+    bottom: 0px;
+    display: inline-flex;
+    border: 2px solid black;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.material-icons {
+    font-size: 34px;
+    width: 40px;
+    margin-right: 5em;
+    color: #39ABA2;
+}
+
+.material-icons:hover {
+    color: #075c38;
+    stroke-width: 8;
+}
+
+
+/* .btn mat-icon {
+    width: 40px;
+    margin-right: 5em;
+    color: #1abc9c;
+    background: linear-gradient(to right, #b47dcd, #e878a2, #eb85ab);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+} */
+
+.info {
+    flex-grow: 1;
+}
+
+.infoTitle {
+    font-size: 30px;
+    color: black;
+}
+
+.infoAuthor {
+    font-size: 20px;
+    color: #369;
+    padding: 5px;
+}
+
+.cover {
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+}
+
+.btn {
+    flex-grow: 3;
+    justify-content: center;
+    display: flex;
+}
+
+.img {
+    width: 110px;
+}
+
+.player {
+    width: 180%;
+}
