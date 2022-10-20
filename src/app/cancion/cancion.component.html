@@ -6,19 +6,22 @@
     <p>Estilo: <b>Rock</b></p>
 </div> -->
 
-<div class="card" *ngFor=" let cancion of canciones" style="width: 18rem;">
+<div class="card" *ngFor=" let cancion of canciones;" style="width: 18rem;">
   <img class="card-img-top" [src]="cancion.img" [alt]="cancion.titulo">
   <div class="card-body">
     <h5 class="card-title">{{ cancion.titulo }}</h5>
     <p class="card-text">{{ cancion.artista }}</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Estilo:{{ cancion.estilo }}</li>
-    <li class="list-group-item">Año: {{ cancion.fecha }}</li>
-    <li class="list-group-item">Album: {{ cancion.album }}</li>
-  </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Ver Detalles</a>
-    <a href="#" class="card-link">Reproducir</a>
+    <!-- <button class="btn btn-sm btn-outline" routerLink="/detalles/{{cancion.id}}">Ver Detalles</button> -->
+    <button class="btn btn-sm btn-outline" (click)="verDetalle(cancion.id)">Ver Detalles</button>
+    <button class="btn btn-sm btn-outline" routerLink="">Reproducir</button>
   </div>
 </div>
+
+
+<!-- <ul class="list-group list-group-flush">
+  <li class="list-group-item">Estilo:{{ cancion.estilo }}</li>
+  <li class="list-group-item">Año: {{ cancion.fecha }}</li>
+  <li class="list-group-item">Album: {{ cancion.album }}</li>
+</ul> -->

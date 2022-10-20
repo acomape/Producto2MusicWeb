@@ -1,5 +1,7 @@
+* {
+  background-color: white;
 
-
+}
 
 .container {
 
@@ -18,31 +20,32 @@
 }
 
 .Header { grid-area: Header;
-  background-color: blue;
+  background-color: rgb(0, 0, 0);
 }
 
 .NavBar { grid-area: NavBar;
-  background-color: red;
+  background-color: whitesmoke;
 }
 
 .Body { grid-area: Body;
-  background-color: grey;
+  background-color: rgb(193, 193, 193);
 }
 
 .Footer { grid-area: Footer;
-  background-color: yellow;
+  background-color: rgb(44, 44, 44);
 }
 
 h1 {
   padding: 15px;
   margin: 15px;
-  background-color: blue;
-  color: white;
+  background-color: black;
+  /* color: white; */
   text-align: center;
 }
 
 nav {
   margin: 5px;
   padding: 5px;
-  background-color: red;
+  /* background-color: grey; */
 }
+

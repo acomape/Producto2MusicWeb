@@ -7,6 +7,7 @@ export class CancionesService {
   private canciones: Cancion[] = [
 
     {
+      id: 1,
       titulo: "Instant Crush",
       artista: "Daft Punk",
       img: "assets/instantcrush.jpg",
@@ -15,6 +16,7 @@ export class CancionesService {
       album: "R.A.M",
     },
     {
+      id: 2,
       titulo: "Despecha",
       artista: "Rosalia",
       img: "assets/despecha.png",
@@ -23,6 +25,7 @@ export class CancionesService {
       album: "Motomami",
     },
     {
+      id: 3,
       titulo: "Un Verano sin ti",
       artista: "Bad Bunny",
       img: "assets/unveranosinti.jpg",
@@ -31,6 +34,7 @@ export class CancionesService {
       album: "Un Verano sin ti",
     },
     {
+      id: 4,
       titulo: "Hold On",
       artista: "Illenium",
       img: "assets/holdon.jpg",
@@ -39,6 +43,7 @@ export class CancionesService {
       album: "Ascend",
     },
     {
+      id: 5,
       titulo: "Soldadito Marinero",
       artista: "Fito y Fitipaldis",
       img: "assets/soldaditomarinero.jpg",
@@ -61,6 +66,7 @@ export class CancionesService {
 
 export interface Cancion{
 
+  id: number;
   titulo: string;
   artista: string;
   img: string;
