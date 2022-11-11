@@ -8,17 +8,19 @@
 <body>
   <div class="container">
     <div class="NavBar">
-      <nav class="navbar bg-light">
+      <nav class="navbar bg-light d-block">
+        <app-text-filter></app-text-filter>
         <app-detalleCancion></app-detalleCancion>
       </nav>
 
     </div>
     <div class="Body canciones-wrapper">
+      <app-reproductor class="reproductor"></app-reproductor>
       <app-cancion class="cancion"></app-cancion>
       
     </div>
     <div class="Footer">
-      <app-reproductor class="reproductor"></app-reproductor>
+     
     </div>
   </div>
 </body>

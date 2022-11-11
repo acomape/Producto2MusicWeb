@@ -19,6 +19,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import {CancionesService} from './servicios/canciones.service';
 import { detalleCancionComponent } from './detalleCancion/detalleCancion.component';
 import { APP_ROUTING } from './app.routes';
+import { TextFilterComponent } from './text-filter/text-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { APP_ROUTING } from './app.routes';
     detalleCancionComponent,
     HeaderComponent,
     ReproductorComponent,
+    TextFilterComponent,
     
 
   ],

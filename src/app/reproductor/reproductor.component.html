@@ -1,58 +1,48 @@
 
-<!--
-<body class="bodyreproductor">
+<div class="reproductor">
 
-    <div class="music-player-container">
-        <div class="title-music-container">
-            <h4 class="song-title">{{cancion?.titulo}}</h4>
-            <span class="song-author">{{cancion?.artista}}</span>
+    <div class="reproductor__detalles">
+        <div *ngIf="cancion; else noSongSelected" class="cover">
+            <img class="img" src="{{cancion?.img}}" />
         </div>
-        <div class="controls-music-container">
-            <div class="progress-song-container">
-                <div class="progress-bar">
-                    <span class="progress"></span>
-                </div>
+        <ng-template #noSongSelected>
+            <div>
+                <span>No hay ninguna canción seleccionada</span>
             </div>
-            <div class="time-container">
-                <span class="time-left" id="CurrentSongTime"></span>
-                <span class="time-left" id="SongLength"></span>
+        </ng-template>
+
+        <div class="info">
+            <div class="infoTitle">{{cancion?.titulo}}</div>
+            <div class="infoAuthor">{{cancion?.artista}}</div>
+        </div>
+    </div>
+
+    <div class="reproductor__controles">
+        <!-- ESTOS OTROS ICONOS ESTAN COMENTADOS PORQUE NO SON LOS REQUISITOS DEL ENUNCIADO. SI HAY TIEMPO LOS CONFIGURAMOS TAMBIÉN -->
+        <!-- <mat-icon class="material-icons"> shuffle </mat-icon>  -->
+        <!-- <mat-icon class="material-icons" (click)="prevSong()"> skip_previous </mat-icon> -->
+        <mat-icon class="material-icons" (click)="stopSong()"> stop_circle </mat-icon>
+        <mat-icon class="material-icons" (click)="playSong()">play_arrow</mat-icon>
+        <mat-icon class="material-icons" (click)="pauseSong()">pause</mat-icon>
+        <!-- <mat-icon class="material-icons" (click)="nextSong()"> skip_next </mat-icon> -->
+    </div>
+
+    <div class="reproductor__barra-progreso">
+        <!-- <div class="btn">
+            <audio class="player" src="#" type="audio/mp3" controls autoplay></audio>
+        </div> -->
+        <div class="barra__container">
+            <span class="barra__restante">
+                -03:23
+            </span>
+            <div class="barra">
+                <div class="barra__progreso"></div>
             </div>
-        </div>
-        <audio controls preload="metadata" src="Audio.mp3"></audio>
-        <div class="main-song-controls">
-            <img src="Backward.svg" alt="" class="icon" id="Back10">
-            <img src="Play.svg" alt="" class="icon" id="PlayPause">
-            <img src="Forward.svg" alt="" class="icon" id="Plus10">
+            <span class="barra_total">
+                04:25
+            </span>
         </div>
     </div>
-    
-    
-</body>
--->
 
-<div class="container">
-    <div *ngIf="cancion; else noSongSelected" class="cover">
-        <img class="img" src="{{cancion?.img}}" />
-    </div>
-    <ng-template #noSongSelected>
-        <div>
-            <span>No hay una canción seleccionada</span>
-        </div>
-    </ng-template>
-
-    <div class="info">
-        <div class="infoTitle">{{cancion?.titulo}}</div>
-        <div class="infoAuthor">{{cancion?.artista}}</div>
-    </div>
-    <div class="btn">
-        <mat-icon class="material-icons" > shuffle </mat-icon>
-        <mat-icon class="material-icons" > skip_previous </mat-icon>
-        <mat-icon class="material-icons" > stop_circle </mat-icon>
-        <!-- <mat-icon class="material-icons" (click)="playSong(song)">play_arrow</mat-icon> -->
-        <mat-icon class="material-icons" > skip_next </mat-icon>
-    </div>
-    <div class="btn">
-        <audio class="player" src="#" type="audio/mp3" controls autoplay></audio>
-    </div>
 
 </div>

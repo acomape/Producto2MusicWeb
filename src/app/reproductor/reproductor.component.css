@@ -3,7 +3,7 @@
     margin-right: 5em;
 }
 
-.container {
+.container{
     flex-grow: 1;
     background-color: whitesmoke;
     width: 100%;
@@ -20,18 +20,31 @@
     transform: rotate(180deg);
 }
 
-.material-icons {
-    font-size: 34px;
-    width: 40px;
-    margin-right: 5em;
-    color: #39ABA2;
-}
 
 .material-icons:hover {
     color: #075c38;
     stroke-width: 8;
 }
 
+.reproductor{
+    padding: 20px 0;
+    background-color: rgb(224, 224, 224);
+}
+.reproductor__detalles{
+    text-align: center;
+}
+.reproductor__controles{
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+   color: #39ABA2;
+   gap: 20px;
+
+}
+
+.reproductor__controles mat-icon {
+    cursor: pointer;
+}
 
 /* .btn mat-icon {
     width: 40px;
@@ -77,4 +90,26 @@
 
 .player {
     width: 180%;
+}
+
+.barra__container{
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.barra {
+    background-color: white;
+    height: 4px;
+    border-radius: 2px;
+    width: 85%;
+}
+
+.barra__progreso{
+    background-color: #39ABA2;
+    width: 30%;
+    height: 100%;
+    border-radius: 2px;
+
 }

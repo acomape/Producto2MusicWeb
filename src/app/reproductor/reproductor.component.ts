@@ -18,6 +18,26 @@ canciones:Cancion[] = [];
 
   ngOnInit(): void {
   }
+
+  playSong() {
+    console.log("PLAY");
+  }
+
+  pauseSong() {
+    console.log("PAUSE");
+  }
+
+  stopSong() {
+    console.log("STOP");
+  }
+
+  prevSong() {
+    console.log("PREV");
+  }
+  nextSong() {
+    console.log("NEXT");
+  }
+
   
   
 
