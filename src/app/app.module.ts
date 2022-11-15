@@ -17,6 +17,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
 //Servicios
 
 import {CancionesService} from './servicios/canciones.service';
+import {ReproductorService} from './servicios/reproductor.service';
 import { detalleCancionComponent } from './detalleCancion/detalleCancion.component';
 import { APP_ROUTING } from './app.routes';
 import { TextFilterComponent } from './text-filter/text-filter.component';
@@ -31,18 +32,19 @@ import { TextFilterComponent } from './text-filter/text-filter.component';
     HeaderComponent,
     ReproductorComponent,
     TextFilterComponent,
-    
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+
     APP_ROUTING
-    
+
   ],
   providers: [
-    CancionesService
+    CancionesService,
   ],
   bootstrap: [AppComponent]
 })

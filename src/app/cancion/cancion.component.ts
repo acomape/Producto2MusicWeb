@@ -11,6 +11,9 @@ export class CancionComponent implements OnInit {
 
   canciones:Cancion[] = [];
   cancion: Cancion | undefined;
+
+
+
   constructor( private _cancionesService:CancionesService,
     private servicioDetalle: ServicioVerDetalleService ) { }
 
@@ -21,6 +24,7 @@ export class CancionComponent implements OnInit {
     console.log (this.canciones);
 
 
+
   }
 
   verDetalle(id:number){
@@ -29,6 +33,11 @@ export class CancionComponent implements OnInit {
     console.log("TEST" +  id_cancion);
 
     this.servicioDetalle.disparadorDetalle.emit(this.cancion);
+  }
+
+  playSong(mp3:string){
+
+
   }
 
 }

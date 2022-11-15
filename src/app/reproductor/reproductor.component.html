@@ -21,28 +21,28 @@
         <!-- ESTOS OTROS ICONOS ESTAN COMENTADOS PORQUE NO SON LOS REQUISITOS DEL ENUNCIADO. SI HAY TIEMPO LOS CONFIGURAMOS TAMBIÉN -->
         <!-- <mat-icon class="material-icons"> shuffle </mat-icon>  -->
         <!-- <mat-icon class="material-icons" (click)="prevSong()"> skip_previous </mat-icon> -->
-        <mat-icon class="material-icons" (click)="stopSong()"> stop_circle </mat-icon>
-        <mat-icon class="material-icons" (click)="playSong()">play_arrow</mat-icon>
-        <mat-icon class="material-icons" (click)="pauseSong()">pause</mat-icon>
+        <mat-icon class="material-icons" (click)="onStop()"> stop_circle </mat-icon>
+        <mat-icon class="material-icons" (click)="onPlay()">play_arrow</mat-icon>
+        <mat-icon class="material-icons" (click)="onPause()">pause</mat-icon>
         <!-- <mat-icon class="material-icons" (click)="nextSong()"> skip_next </mat-icon> -->
     </div>
 
+
     <div class="reproductor__barra-progreso">
-        <!-- <div class="btn">
-            <audio class="player" src="#" type="audio/mp3" controls autoplay></audio>
-        </div> -->
-        <div class="barra__container">
-            <span class="barra__restante">
-                -03:23
-            </span>
-            <div class="barra">
-                <div class="barra__progreso"></div>
-            </div>
-            <span class="barra_total">
-                04:25
-            </span>
-        </div>
-    </div>
+      <!-- <div class="btn">
+          <audio class="player" src="#" type="audio/mp3" controls autoplay></audio>
+      </div> -->
+      <div class="barra__container">
+          <span class="barra__restante">
+              -03:23
+          </span>
+          <div class="barra">
+              <div class="barra__progreso"></div>
+          </div>
+          <span class="barra_total">
+              04:25
+          </span>
+      </div>
 
 
 </div>

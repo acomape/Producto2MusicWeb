@@ -10,12 +10,13 @@
   <img class="card-img-top" [src]="cancion.img" [alt]="cancion.titulo">
   <div class="card-body">
     <h5 class="card-title">{{ cancion.titulo }}</h5>
-    <p class="card-text">{{ cancion.artista }}</p>
+    <p class="card-text" style="font-weight: bolder;">{{ cancion.artista }}</p>
   </div>
   <div class="card-body">
     <!-- <button class="btn btn-sm btn-outline" routerLink="/detalles/{{cancion.id}}">Ver Detalles</button> -->
     <button class="btn btn-sm btn-outline" (click)="verDetalle(cancion.id)">Ver Detalles</button>
-    <button class="btn btn-sm btn-outline" routerLink="">Reproducir</button>
+    <audio class="player" style="width: 120%;" [src]="cancion.mp3" type="audio/mp3" controls> {{ cancion.mp3 }}</audio>
+
   </div>
 </div>
 
