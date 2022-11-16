@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CancionesService, Cancion} from '../servicios/canciones.service';
 import {ServicioVerDetalleService} from "../servicio-ver-detalle.service";
+import { ServicioReproducirCancion } from '../servicios/servicio-reproducir-cancion.service';
 
 @Component({
   selector: 'app-cancion',
@@ -12,7 +13,8 @@ export class CancionComponent implements OnInit {
   canciones:Cancion[] = [];
   cancion: Cancion | undefined;
   constructor( private _cancionesService:CancionesService,
-    private servicioDetalle: ServicioVerDetalleService ) { }
+    private servicioDetalle: ServicioVerDetalleService,
+    private servicioReproducirCancion: ServicioReproducirCancion ) { }
 
   ngOnInit() {
 
@@ -29,6 +31,11 @@ export class CancionComponent implements OnInit {
     console.log("TEST" +  id_cancion);
 
     this.servicioDetalle.disparadorDetalle.emit(this.cancion);
+  }
+
+  reproducirCancion(id:number){
+    this.cancion = this.canciones.find(cancion => cancion.id === id);
+    this.servicioReproducirCancion.reproducirCancionTrigger.emit(this.cancion);
   }
 
 }

@@ -14,6 +14,7 @@ export class CancionesService {
       estilo:"Electrónica",
       fecha: "2013",
       album: "R.A.M",
+      url: "assets/instantcrush.mp3",
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ export class CancionesService {
       estilo:"Pop",
       fecha: "2022",
       album: "Motomami",
+      url: "assets/despecha.mp3",
     },
     {
       id: 3,
@@ -32,6 +34,7 @@ export class CancionesService {
       estilo:"Pop",
       fecha: "2022",
       album: "Un Verano sin ti",
+      url: "assets/unveranosinti.mp3",
     },
     {
       id: 4,
@@ -41,6 +44,7 @@ export class CancionesService {
       estilo:"Electrónica",
       fecha: "2019",
       album: "Ascend",
+      url: "assets/holdon.mp3",
     },
     {
       id: 5,
@@ -50,6 +54,7 @@ export class CancionesService {
       estilo:"Alternativa",
       fecha: "2003",
       album: "Lo Más Lejos",
+      url: "assets/soldaditomarinero.mp3",
     },
   ];
 
@@ -73,5 +78,6 @@ export interface Cancion{
   estilo: string;
   fecha: string;
   album: string;
+  url: string;
 
 };
