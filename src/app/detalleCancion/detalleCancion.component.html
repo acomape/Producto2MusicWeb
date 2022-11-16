@@ -23,10 +23,17 @@
 
 <h2>Detalles</h2>
 <div class="container" *ngIf="cancion">
-    <img src="{{cancion.img}}" alt="" srcset="" height="250">
+    <img src="{{cancion.img}}" style=" border: 5px solid #555; border-radius: 50%; " alt="" srcset="" height="250">
     <h1>{{cancion.titulo}}</h1>
-    <p>{{cancion.artista}}</p>
-    <p>{{cancion.album}}</p>
+    <h2 style="font-weight: bold;">Artista:</h2>
+    <h3>{{cancion.artista}}</h3>
+    <h4 style="font-weight: bold;">Album:</h4>
+    <h4>{{cancion.album}}</h4>
+    <p style="font-weight: bold;">Estilo:</p>
     <p>{{cancion.estilo}}</p>
+    <p style="font-weight: bold;">Fecha Estreno: </p>
     <p>{{cancion.fecha}}</p>
+    <p style="font-weight: bold;">Descripción:</p>
+    <p>{{cancion.description}}</p>
+
 </div>

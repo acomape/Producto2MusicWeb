@@ -6,16 +6,16 @@
     <p>Estilo: <b>Rock</b></p>
 </div> -->
 
-<div class="card" *ngFor=" let cancion of canciones;" style="width: 18rem;">
-  <img class="card-img-top" [src]="cancion.img" [alt]="cancion.titulo">
+<div class="card" *ngFor=" let cancion of canciones;" style="width: 30%;">
+  <img class="card-img-top"  [src]="cancion.img" style="border-radius: 50%;" [alt]="cancion.titulo">
   <div class="card-body">
     <h5 class="card-title">{{ cancion.titulo }}</h5>
     <p class="card-text">{{ cancion.artista }}</p>
   </div>
   <div class="card-body">
     <!-- <button class="btn btn-sm btn-outline" routerLink="/detalles/{{cancion.id}}">Ver Detalles</button> -->
-    <button class="btn btn-sm btn-outline" (click)="verDetalle(cancion.id)">Ver Detalles</button>
-    <button class="btn btn-sm btn-outline" (click)="reproducirCancion(cancion.id)">Reproducir</button>
+    <button class="btn btn-sm btn-outline" (click)="verDetalle(cancion.id)"><span>Detalles </span></button>
+    <button class="btn btn-sm btn-outline" (click)="reproducirCancion(cancion.id)"><span>Reproducir </span></button>
   </div>
 </div>
 
