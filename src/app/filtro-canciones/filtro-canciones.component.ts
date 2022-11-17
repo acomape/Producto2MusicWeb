@@ -5,14 +5,22 @@ import { FiltroCancionesPipe } from '../pipe/filtro.pipe';
 
 @Component({
   selector: 'app-text-filter',
-  templateUrl: './text-filter.component.html',
-  styleUrls: ['./text-filter.component.css']
+  templateUrl: './filtro-canciones.component.html',
+  styleUrls: ['./filtro-canciones.component.css']
 })
 export class TextFilterComponent implements OnInit {
 
   constructor( public cancionesService:CancionesService) { }
 
   ngOnInit(): void {
+  }
+
+  filtroTexto() {
+    console.log("click en texto");
+  }
+
+  filtroEstilos(){
+    console.log("click en estilos");
   }
 
 }

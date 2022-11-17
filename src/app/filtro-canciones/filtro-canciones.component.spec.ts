@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CancionComponent } from './cancion.component';
+import { TextFilterComponent } from './filtro-canciones.component';
 
-describe('CancionComponent', () => {
-  let component: CancionComponent;
-  let fixture: ComponentFixture<CancionComponent>;
+describe('TextFilterComponent', () => {
+  let component: TextFilterComponent;
+  let fixture: ComponentFixture<TextFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CancionComponent ]
+      declarations: [ TextFilterComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CancionComponent);
+    fixture = TestBed.createComponent(TextFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
