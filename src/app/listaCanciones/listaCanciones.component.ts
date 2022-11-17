@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CancionesService, Cancion} from '../servicios/canciones.service';
-import {ServicioVerDetalleService} from "../servicio-ver-detalle.service";
+import { CancionesService, Cancion } from '../servicios/canciones.service';
+import { ServicioVerDetalleService } from "../servicio-ver-detalle.service";
 import { ServicioReproducirCancion } from '../servicios/servicio-reproducir-cancion.service';
 
 @Component({
@@ -10,32 +10,68 @@ import { ServicioReproducirCancion } from '../servicios/servicio-reproducir-canc
 })
 export class CancionComponent implements OnInit {
 
-  canciones:Cancion[] = [];
+  canciones: Cancion[] = [];
   cancion: Cancion | undefined;
-  constructor( private _cancionesService:CancionesService,
+  constructor(private _cancionesService: CancionesService,
     private servicioDetalle: ServicioVerDetalleService,
-    private servicioReproducirCancion: ServicioReproducirCancion ) { }
+    private servicioReproducirCancion: ServicioReproducirCancion) { }
 
   ngOnInit() {
 
     this.canciones = this._cancionesService.getCanciones();
 
-    console.log (this.canciones);
+    console.log(this.canciones);
 
+    this.getCancionesFiltradasEstilo("Todas");
 
   }
 
-  verDetalle(id:number){
+  public getCancionesFiltradasTexto(busqueda: string) {
+    console.log("FILTRO")
+
+    this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.titulo == busqueda);
+
+  }
+
+  public getCancionesFiltradasEstilo(estilo: string) {
+
+
+    switch (estilo) {
+      case "Electrónica":
+        console.log("Filtro electrónica");
+        this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.estilo == estilo);
+        break;
+      case "Pop":
+        console.log("Filtro electrónica");
+        this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.estilo == estilo);
+        break;
+      case "Alternativa":
+        console.log("Filtro electrónica");
+        this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.estilo == estilo);
+        break;
+      case "Todas":
+        this.canciones = this._cancionesService.getCanciones();
+        break;
+      default:
+        this.canciones = [];
+        break;
+    }
+  }
+
+
+  verDetalle(id: number) {
     this.cancion = this.canciones.find(cancion => cancion.id === id);
     let id_cancion = this.cancion?.id;
-    console.log("TEST" +  id_cancion);
+    console.log("TEST" + id_cancion);
 
     this.servicioDetalle.disparadorDetalle.emit(this.cancion);
   }
 
-  reproducirCancion(id:number){
+  reproducirCancion(id: number) {
     this.cancion = this.canciones.find(cancion => cancion.id === id);
     this.servicioReproducirCancion.reproducirCancionTrigger.emit(this.cancion);
   }
 
 }
+
+
