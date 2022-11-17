@@ -45,9 +45,7 @@ export class detalleCancionComponent {
       // this.cancion = this.canciones.find(cancion => cancion.id === productIdFromRoute);
     
       this.servicioDetalle.disparadorDetalle.subscribe(data => {
-        console.log("Recibiendo dat...a", data);
         this.cancion = data;
-
       })
 
     }
