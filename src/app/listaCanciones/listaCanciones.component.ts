@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CancionesService, Cancion } from '../servicios/canciones.service';
 import { ServicioVerDetalleService } from "../servicio-ver-detalle.service";
 import { ServicioReproducirCancion } from '../servicios/servicio-reproducir-cancion.service';
+import { FiltrosServicioService  } from '../filtros-servicio.service';
+
+
 
 @Component({
   selector: 'app-listaCanciones',
@@ -13,6 +16,7 @@ export class CancionComponent implements OnInit {
   canciones: Cancion[] = [];
   cancion: Cancion | undefined;
   constructor(private _cancionesService: CancionesService,
+    private filtrosServicio: FiltrosServicioService,
     private servicioDetalle: ServicioVerDetalleService,
     private servicioReproducirCancion: ServicioReproducirCancion) { }
 
@@ -22,12 +26,23 @@ export class CancionComponent implements OnInit {
 
     console.log(this.canciones);
 
-    this.getCancionesFiltradasEstilo("Todas");
+    
+
+    this.filtrosServicio.disparadorFiltroTexto.subscribe(data => {
+      this.getCancionesFiltradasTexto(data);
+      console.log(data)
+    })
+
+    this.filtrosServicio.disparadorFiltroEstilo.subscribe(data => {
+      console.log(data)
+      this.getCancionesFiltradasEstilo(data);
+    })
+
 
   }
 
   public getCancionesFiltradasTexto(busqueda: string) {
-    console.log("FILTRO")
+    console.log("FILTRO: ")
 
     this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.titulo == busqueda);
 
