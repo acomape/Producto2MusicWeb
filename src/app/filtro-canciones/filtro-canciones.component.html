@@ -3,17 +3,17 @@
     <h2>Filtros</h2>
     <form name = "text-filter-form" >
         <input type="text" class="form-control" placeholder="Busca una canción...">
-        <button class="btn btn-primary btn-outline" type="button" (click)="filtroTexto('Depecha')">Buscar</button>
+        <button class="btn btn-primary btn-outline" type="button" style="margin: 5px;" (click)="filtroTexto()">Buscar</button>
     </form>
 
     <form name = "style-filter-form">
-        <label for="">Selecciona un estilo</label>
-        <select class="btn-outline" type="" name="estilos" id="style">
+        <label for="" style="padding: 3px;">Selecciona un estilo</label>
+        <select class="btn" style="border: 2px solid #39ABA2 ;" type="" name="estilos" id="style">
           <option value="Electrónica">Electrónica</option>
           <option value="Pop">Pop</option>
           <option value="Alternativa">Alternativa</option>
         </select>
-        <input class="btn btn-primary" type="button" (click)="filtroTexto('asd')" value="Filtrar" />
+        <input class="btn btn-primary" type="button" style="margin: 5px;" (click)="filtroTexto()" value="Filtrar" />
     </form>
 
 </div>
