@@ -23,6 +23,7 @@ import { ServicioReproducirCancion } from './servicios/servicio-reproducir-canci
 import { detalleCancionComponent } from './detalleCancion/detalleCancion.component';
 import { APP_ROUTING } from './app.routes';
 import { TextFilterComponent } from './filtro-canciones/filtro-canciones.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TextFilterComponent } from './filtro-canciones/filtro-canciones.compone
     AppRoutingModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     APP_ROUTING
 
   ],

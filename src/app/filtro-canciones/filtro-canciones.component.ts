@@ -3,6 +3,9 @@ import { NgModel } from '@angular/forms';
 import { CancionesService } from '../servicios/canciones.service';
 import { FiltroCancionesPipe } from '../pipe/filtro.pipe';
 import { CancionComponent} from '../listaCanciones/listaCanciones.component';
+import { FiltrosServicioService  } from  '../filtros-servicio.service';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-text-filter',
@@ -11,17 +14,37 @@ import { CancionComponent} from '../listaCanciones/listaCanciones.component';
 })
 export class TextFilterComponent implements OnInit {
 
-  constructor( public cancionesService:CancionesService) { }
+  resultadoBusqueda:any;
+  resultadoFiltro:any;
+
+  constructor( private filtrosServicio: FiltrosServicioService) { }
+
+
+  textFilter = new FormGroup({
+    texto: new FormControl(''),
+  });
+
+  styleFilter = new FormGroup({
+    estilo: new FormControl(''),
+  });
+
+ 
+
 
   ngOnInit(): void {
   }
 
   filtroTexto() {
-    console.log("click en texto");
+    this.resultadoBusqueda = this.textFilter.value;
+    this.filtrosServicio.disparadorFiltroTexto.emit(this.resultadoBusqueda.texto);
   }
 
   filtroEstilos(){
-    console.log("click en estilos");
+
+    this.resultadoFiltro = this.styleFilter.value;
+    this.filtrosServicio.disparadorFiltroEstilo.emit(this.resultadoFiltro.estilo);
+    console.log("ESTILO K");
+    console.log(this.styleFilter.value)
   }
 
 }
