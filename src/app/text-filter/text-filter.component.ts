@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { CancionesService } from '../servicios/canciones.service';
+import { FiltroCancionesPipe } from '../pipe/filtro.pipe';
 
 @Component({
   selector: 'app-text-filter',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextFilterComponent implements OnInit {
 
-  constructor() { }
+  constructor( public cancionesService:CancionesService) { }
 
   ngOnInit(): void {
   }

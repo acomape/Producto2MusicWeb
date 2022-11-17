@@ -3,7 +3,7 @@
 
     <div class="reproductor__detalles">
         <div *ngIf="cancion; else noSongSelected" class="cover">
-            <img class="img" src="{{cancion?.img}}" style="border: 5px solid #39ABA2; border-radius: 50%;" />
+            <img class="img" src="{{cancion.img}}" style="border: 2px solid #39ABA2; border-radius: 50%; box-shadow: 1px 1px 2px #39ABA2, 0 0 25px #39ABA2, 0 0 5px #39ABA2;" />
         </div>
         <ng-template #noSongSelected>
             <div>
@@ -12,7 +12,7 @@
         </ng-template>
 
         <div class="info">
-            <div class="infoTitle">{{cancion?.titulo}}</div>
+            <div class="infoTitle" style="color: #39ABA2;">{{cancion?.titulo}}</div>
             <div class="infoAuthor">{{cancion?.artista}}</div>
         </div>
     </div>

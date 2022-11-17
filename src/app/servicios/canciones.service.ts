@@ -4,6 +4,8 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class CancionesService {
 
+  filtroCanciones:'titulo' | undefined;
+
   private canciones: Cancion[] = [
 
     {
