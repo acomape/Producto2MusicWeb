@@ -16,7 +16,7 @@ export class TextFilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  filtroTexto(busqueda:string) {
+  filtroTexto() {
     console.log("click en texto");
   }
 
