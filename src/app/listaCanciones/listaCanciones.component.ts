@@ -4,9 +4,9 @@ import {ServicioVerDetalleService} from "../servicio-ver-detalle.service";
 import { ServicioReproducirCancion } from '../servicios/servicio-reproducir-cancion.service';
 
 @Component({
-  selector: 'app-cancion',
-  templateUrl: './cancion.component.html',
-  styleUrls: ['./cancion.component.css']
+  selector: 'app-listaCanciones',
+  templateUrl: './listaCanciones.component.html',
+  styleUrls: ['./listaCanciones.component.css']
 })
 export class CancionComponent implements OnInit {
 

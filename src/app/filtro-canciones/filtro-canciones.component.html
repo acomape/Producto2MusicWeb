@@ -1,9 +1,9 @@
 
 <div class="text-filter">
     <h2>Filtros</h2>
-    <form name = "text-filter-form">
+    <form name = "text-filter-form" >
         <input type="text" class="form-control" placeholder="Busca una canción...">
-        <button class="btn btn-outline" type="submit">Buscar</button>
+        <button class="btn btn-primary btn-outline" type="button" (click)="filtroTexto()">Buscar</button>
     </form>
 
     <form name = "style-filter-form">
@@ -13,7 +13,7 @@
           <option value="Pop">Pop</option>
           <option value="Alternativa">Alternativa</option>
         </select>
-        <input class="btn btn-outline" type="submit" value="Filtrar" />
+        <input class="btn btn-primary" type="button" (click)="filtroTexto()" value="Filtrar" />
     </form>
 
 </div>

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CancionComponent } from './cancion/cancion.component';
+import { CancionComponent } from './listaCanciones/listaCanciones.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +22,7 @@ import {CancionesService} from './servicios/canciones.service';
 import { ServicioReproducirCancion } from './servicios/servicio-reproducir-cancion.service';
 import { detalleCancionComponent } from './detalleCancion/detalleCancion.component';
 import { APP_ROUTING } from './app.routes';
-import { TextFilterComponent } from './text-filter/text-filter.component';
+import { TextFilterComponent } from './filtro-canciones/filtro-canciones.component';
 
 @NgModule({
   declarations: [
