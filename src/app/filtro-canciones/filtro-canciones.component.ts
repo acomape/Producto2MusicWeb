@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { CancionesService } from '../servicios/canciones.service';
 import { FiltroCancionesPipe } from '../pipe/filtro.pipe';
+import { CancionComponent} from '../listaCanciones/listaCanciones.component';
 
 @Component({
   selector: 'app-text-filter',
@@ -15,7 +16,7 @@ export class TextFilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  filtroTexto() {
+  filtroTexto(busqueda:string) {
     console.log("click en texto");
   }
 
