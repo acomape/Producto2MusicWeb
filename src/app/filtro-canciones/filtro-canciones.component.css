@@ -1,3 +1,8 @@
 .text-filter label {
     display: block;
 }
+
+.formularioTexto{
+    display: flex;
+    margin-bottom: 15px;
+}

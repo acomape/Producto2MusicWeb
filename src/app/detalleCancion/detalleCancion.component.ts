@@ -24,39 +24,15 @@ export class detalleCancionComponent {
 
     ) {
 
-
-      // this.activatedRoute.params.subscribe ( params => {
-      //   this.canciones = this._cancionesService.getCanciones ();
-      //   console.log(this.canciones);
-
-
-
-      // });
-
     }
 
     ngOnInit() {
-      // const routeParams = this.activatedRoute.snapshot.paramMap;
-      // const productIdFromRoute = Number(routeParams.get('id'));
-      // this.canciones = this._cancionesService.getCanciones();
-
-      // console.log ("hellllo");
-
-      // this.cancion = this.canciones.find(cancion => cancion.id === productIdFromRoute);
     
       this.servicioDetalle.disparadorDetalle.subscribe(data => {
         this.cancion = data;
       })
 
     }
-
-    
-
-    // goHome(): void {
-    //   this.router.navigate(['/home'])
-    // }
-
-
 
 
   }

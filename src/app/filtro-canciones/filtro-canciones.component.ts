@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
-import { CancionesService } from '../servicios/canciones.service';
-import { FiltroCancionesPipe } from '../pipe/filtro.pipe';
-import { CancionComponent} from '../listaCanciones/listaCanciones.component';
 import { FiltrosServicioService  } from  '../filtros-servicio.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -16,6 +12,7 @@ export class TextFilterComponent implements OnInit {
 
   resultadoBusqueda:any;
   resultadoFiltro:any;
+  resultadoArtista:any;
 
   constructor( private filtrosServicio: FiltrosServicioService) { }
 
@@ -24,14 +21,25 @@ export class TextFilterComponent implements OnInit {
     texto: new FormControl(''),
   });
 
+  artistFilter = new FormGroup({
+    artista: new FormControl(''),
+  })
+
   styleFilter = new FormGroup({
     estilo: new FormControl(''),
   });
+
+
 
  
 
 
   ngOnInit(): void {
+  }
+
+  filtroArtista() {
+    this.resultadoArtista = this.artistFilter.value;
+    this.filtrosServicio.disparadorFiltroArtista.emit(this.resultadoArtista.artista);
   }
 
   filtroTexto() {

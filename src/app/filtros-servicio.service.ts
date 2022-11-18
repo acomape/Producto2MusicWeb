@@ -6,7 +6,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 export class FiltrosServicioService {
   @Output() disparadorFiltroTexto: EventEmitter<any> = new EventEmitter();
   @Output() disparadorFiltroEstilo: EventEmitter<any> = new EventEmitter();
-  
+  @Output() disparadorFiltroArtista: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 }

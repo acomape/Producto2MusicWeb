@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CancionesService, Cancion } from '../servicios/canciones.service';
 import { ServicioVerDetalleService } from "../servicio-ver-detalle.service";
 import { ServicioReproducirCancion } from '../servicios/servicio-reproducir-cancion.service';
-import { FiltrosServicioService  } from '../filtros-servicio.service';
+import { FiltrosServicioService } from '../filtros-servicio.service';
 
 
 
@@ -26,7 +26,10 @@ export class CancionComponent implements OnInit {
 
     console.log(this.canciones);
 
-    
+    this.filtrosServicio.disparadorFiltroArtista.subscribe(data => {
+      this.getCancionesFiltradasArtista(data);
+      console.log(data)
+    })
 
     this.filtrosServicio.disparadorFiltroTexto.subscribe(data => {
       this.getCancionesFiltradasTexto(data);
@@ -42,26 +45,31 @@ export class CancionComponent implements OnInit {
   }
 
   public getCancionesFiltradasTexto(busqueda: string) {
-    console.log("FILTRO: ")
+    if (busqueda == "") {
+      this.canciones = this._cancionesService.getCanciones();
+    } else {
+      this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.titulo.toLowerCase()  == busqueda.toLowerCase() );
+    }
+  }
 
-    this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.titulo == busqueda);
-
+  public getCancionesFiltradasArtista(busqueda: string) {
+    if (busqueda == "") {
+      this.canciones = this._cancionesService.getCanciones();
+    } else {
+      this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.artista.toLowerCase() == busqueda.toLowerCase());
+    }
   }
 
   public getCancionesFiltradasEstilo(estilo: string) {
 
-
     switch (estilo) {
       case "Electrónica":
-        console.log("Filtro electrónica");
         this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.estilo == estilo);
         break;
       case "Pop":
-        console.log("Filtro electrónica");
         this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.estilo == estilo);
         break;
       case "Alternativa":
-        console.log("Filtro electrónica");
         this.canciones = this._cancionesService.getCanciones().filter(cancion => cancion.estilo == estilo);
         break;
       case "Todas":

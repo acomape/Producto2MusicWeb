@@ -1,19 +1,27 @@
 
 <div class="text-filter">
     <h2>Filtros</h2>
-    <form name = "text-filter-form" [formGroup]="textFilter" (ngSubmit)="filtroTexto()" >
+    <form name = "text-filter-form" [formGroup]="textFilter" (ngSubmit)="filtroTexto()" class="formularioTexto" >
         <input type="text" class="form-control" placeholder="Busca una canción..." formControlName="texto">
+        <button class="btn btn-primary btn-outline" type="submit" style="margin: 5px;">Buscar</button>
+    </form>
+
+    <form name = "artista-filter-form" [formGroup]="artistFilter" (ngSubmit)="filtroArtista()" class="formularioTexto" >
+        <input type="text" class="form-control" placeholder="Busca un artista..." formControlName="artista">
         <button class="btn btn-primary btn-outline" type="submit" style="margin: 5px;">Buscar</button>
     </form>
 
     <form name = "style-filter-form" [formGroup]="styleFilter" (ngSubmit)="filtroEstilos()">
         <label for="" style="padding: 3px;">Selecciona un estilo</label>
         <select class="btn" style="border: 2px solid #39ABA2 ;" type="" name="estilos" id="style" formControlName="estilo">
+          <option value="Todas">Mostrar todo</option>
           <option value="Electrónica">Electrónica</option>
           <option value="Pop">Pop</option>
           <option value="Alternativa">Alternativa</option>
         </select>
         <input class="btn btn-primary" type="button" style="margin: 5px;" (click)="filtroEstilos()" value="Filtrar" />
     </form>
+
+
 
 </div>
