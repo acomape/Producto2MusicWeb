@@ -24,8 +24,6 @@ export class CancionComponent implements OnInit {
 
     this.canciones = this._cancionesService.getCanciones();
 
-    console.log(this.canciones);
-
     this.filtrosServicio.disparadorFiltroArtista.subscribe(data => {
       this.getCancionesFiltradasArtista(data);
       console.log(data)
