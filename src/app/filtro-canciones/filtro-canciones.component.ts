@@ -30,10 +30,6 @@ export class TextFilterComponent implements OnInit {
   });
 
 
-
- 
-
-
   ngOnInit(): void {
   }
 
@@ -48,7 +44,6 @@ export class TextFilterComponent implements OnInit {
   }
 
   filtroEstilos(){
-
     this.resultadoFiltro = this.styleFilter.value;
     this.filtrosServicio.disparadorFiltroEstilo.emit(this.resultadoFiltro.estilo);
   }
