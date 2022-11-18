@@ -27,7 +27,7 @@
       <!-- <mat-icon class="material-icons" (click)="nextSong()"> skip_next </mat-icon> -->
   </div>
 
-  <div *ngIf="cancion; else noSongSelected" class="reproductor">
+  <div *ngIf="cancion; else noSongSelected" class="BarrayTiempo">
       <div class="timePlayed">
           <input (focus)="pauseSong()" type="text" placeholder="{{valuePlayedTime}}" name="timePlayed"
               [(ngModel)]="valuePlayedTime" value="{{audio ? toHumanTime(audio.currentTime) : 0}}" (keyup)="changeCurrentTime()">
