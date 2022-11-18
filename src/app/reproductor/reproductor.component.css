@@ -27,15 +27,15 @@
 }
 
 .reproductor{
-    padding: 20px 0;
-    background-color: rgb(224, 224, 224);
+    padding: 15px;
+    background-color: white;
 }
 .reproductor__detalles{
     text-align: center;
 }
 .reproductor__controles{
+   margin: 5px;
    display: flex;
-   flex-wrap: nowrap;
    justify-content: center;
    color: #39ABA2;
    gap: 20px;
@@ -92,24 +92,4 @@
     width: 180%;
 }
 
-.barra__container{
-    padding: 0 15px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-}
-.barra {
-    background-color: white;
-    height: 4px;
-    border-radius: 2px;
-    width: 85%;
-}
 
-.barra__progreso{
-    background-color: #39ABA2;
-    width: 30%;
-    height: 100%;
-    border-radius: 2px;
-
-}

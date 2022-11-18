@@ -11,6 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ReproductorComponent } from './reproductor/reproductor.component';
 import { MaterialModule } from './shared/modules/material/material.module';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { PlaySongComponent } from './play-song/play-song.component';
 
 
 
@@ -18,7 +25,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
 
 //Servicios
 
-import {CancionesService} from './servicios/canciones.service';
+import { CancionesService } from './servicios/canciones.service';
 import { ServicioReproducirCancion } from './servicios/servicio-reproducir-cancion.service';
 import { detalleCancionComponent } from './detalleCancion/detalleCancion.component';
 import { APP_ROUTING } from './app.routes';
@@ -35,6 +42,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     ReproductorComponent,
     TextFilterComponent,
+    PlaySongComponent
 
 
   ],
@@ -44,9 +52,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSliderModule,
+    MatListModule,
+    MatInputModule,
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
     APP_ROUTING
 
   ],
+  exports: [MatSliderModule],
   providers: [
     CancionesService,
     ServicioReproducirCancion

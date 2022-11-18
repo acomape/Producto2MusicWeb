@@ -1,0 +1,45 @@
+
+.reproducer__track__bar{
+  justify-content: center;
+	width: calc (800% - 20px);
+	height: 20px;
+	margin: 0 20px;
+}
+
+.reproducer__track__bar span{
+		height: 6px;
+		top: -8px;
+}
+
+.reproducer__track__bar span.init{
+		width: 0%!important;
+}
+
+
+.reproducer__track{
+		font-size: 16px;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+}
+
+.reproducer__track__bar .mat-slider{
+			height: 20px;
+			padding: 0;
+			width: 100%;
+      justify-content: center;
+			transform: translateY(-21px);
+}
+
+.reproducer__track__timePlayed{
+      max-width: 55px;
+
+}
+
+.reproducer__track__timeDuration{
+			max-width: 55px;
+}
+
+.mwlResizable {
+  box-sizing: border-box;
+}

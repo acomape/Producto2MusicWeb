@@ -1,48 +1,43 @@
-
 <div class="reproductor">
 
-    <div class="reproductor__detalles">
-        <div *ngIf="cancion; else noSongSelected" class="cover">
-            <img class="img" src="{{cancion.img}}" style="border: 2px solid #39ABA2; border-radius: 50%; box-shadow: 1px 1px 2px #39ABA2, 0 0 25px #39ABA2, 0 0 5px #39ABA2;" />
-        </div>
-        <ng-template #noSongSelected>
-            <div>
-                <span>No hay ninguna canción seleccionada</span>
-            </div>
-        </ng-template>
+  <div class="reproductor__detalles">
+      <div *ngIf="cancion; else noSongSelected" class="cover">
+          <img class="img" src="{{cancion.img}}"
+              style="border: 2px solid #39ABA2; border-radius: 50%; box-shadow: 1px 1px 2px #39ABA2, 0 0 25px #39ABA2, 0 0 5px #39ABA2;" />
+      </div>
+      <ng-template #noSongSelected>
+          <!-- <div>
+              <span>No hay ninguna canción seleccionada</span>
+          </div> -->
+      </ng-template>
 
-        <div class="info">
-            <div class="infoTitle" style="color: #39ABA2;">{{cancion?.titulo}}</div>
-            <div class="infoAuthor">{{cancion?.artista}}</div>
-        </div>
-    </div>
+      <div class="info">
+          <div class="infoTitle" style="color: #39ABA2;">{{cancion?.titulo}}</div>
+          <div class="infoAuthor">{{cancion?.artista}}</div>
+      </div>
+  </div>
 
-    <div class="reproductor__controles">
-        <!-- ESTOS OTROS ICONOS ESTAN COMENTADOS PORQUE NO SON LOS REQUISITOS DEL ENUNCIADO. SI HAY TIEMPO LOS CONFIGURAMOS TAMBIÉN -->
-        <!-- <mat-icon class="material-icons"> shuffle </mat-icon>  -->
-        <!-- <mat-icon class="material-icons" (click)="prevSong()"> skip_previous </mat-icon> -->
-        <mat-icon class="material-icons" (click)="stopSong()"> stop_circle </mat-icon>
-        <mat-icon class="material-icons" (click)="playSong()">play_arrow</mat-icon>
-        <mat-icon class="material-icons" (click)="pauseSong()">pause</mat-icon>
-        <!-- <mat-icon class="material-icons" (click)="nextSong()"> skip_next </mat-icon> -->
-    </div>
+  <div class="reproductor__controles">
+      <!-- ESTOS OTROS ICONOS ESTAN COMENTADOS PORQUE NO SON LOS REQUISITOS DEL ENUNCIADO. SI HAY TIEMPO LOS CONFIGURAMOS TAMBIÉN -->
+      <!-- <mat-icon class="material-icons"> shuffle </mat-icon>  -->
+      <!-- <mat-icon class="material-icons" (click)="prevSong()"> skip_previous </mat-icon> -->
+      <mat-icon class="material-icons" (click)="stopSong()"> stop_circle </mat-icon>
+      <mat-icon class="material-icons" (click)="playSong()">play_arrow</mat-icon>
+      <mat-icon class="material-icons" (click)="pauseSong()">pause</mat-icon>
+      <!-- <mat-icon class="material-icons" (click)="nextSong()"> skip_next </mat-icon> -->
+  </div>
 
-    <div class="reproductor__barra-progreso">
-        <!-- <div class="btn">
-            <audio class="player" src="#" type="audio/mp3" controls autoplay></audio>
-        </div> -->
-        <div class="barra__container">
-            <span class="barra__restante">
-                -03:23
-            </span>
-            <div class="barra">
-                <div class="barra__progreso"></div>
-            </div>
-            <span class="barra_total">
-                04:25
-            </span>
-        </div>
-    </div>
+  <div *ngIf="cancion; else noSongSelected" class="reproductor">
+      <div class="timePlayed">
+          <input (focus)="pauseSong()" type="text" placeholder="{{valuePlayedTime}}" name="timePlayed"
+              [(ngModel)]="valuePlayedTime" value="{{audio ? toHumanTime(audio.currentTime) : 0}}" (keyup)="changeCurrentTime()">
+      </div>
+      <!-- -->
+      <app-play-song class="trackLenght" (refreshTimePlayed)="refreshTimePlayed($event)"
+          [valuePlayedTime]=" audio ? toPercent(toHumanTime(audio.currentTime)) : 0" [cancion]="cancion" [audio]="audio">
+      </app-play-song>
+      <div class="cancionDuracion">{{cancion ? cancion!.duration : '00:00'}}</div>
+  </div>
 
 
 </div>
